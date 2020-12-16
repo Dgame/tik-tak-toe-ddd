@@ -1,0 +1,8 @@
+[package]
+name = "tik-tak-toe-ddd"
+version = "0.1.0"
+authors = ["Dgame <rswhite4@googlemail.com>"]
+edition = "2018"
+
+[dependencies]
+random-number = "0.1.3"
