@@ -265,11 +265,11 @@ fn parse_direction(s: &str) -> Result<(Row, Column), DirectionError> {
     if s.contains('-') {
         let mut parts = s.split('-');
         match (parts.next(), parts.next(), parts.next()) {
-            // if you enter "top-left"
+            // if you enter e.g. "center-left"
             (Some(first_part), Some(second_part), None) => {
                 match (Row::parse_str(second_part), Column::parse_str(first_part)) {
                     (Ok(row), Ok(column)) => Ok((row, column)),
-                    // if you enter "left-top"
+                    // if you enter e.g. "left-center"
                     _ => Ok((Row::parse_str(first_part)?, Column::parse_str(second_part)?)),
                 }
             }

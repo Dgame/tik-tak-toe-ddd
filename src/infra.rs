@@ -26,6 +26,7 @@ impl<F: FieldFormatter> PlaygroundDisplay for TerminalPlaygroundDisplay<F> {
     fn display(&self, playground: &Playground) {
         for (index, field) in playground.get_fields().iter().enumerate() {
             print!("{}", self.formatter.format(field));
+            // One row has 3 fields, so after that we have to start in a new row
             if (index + 1) % 3 == 0 {
                 println!();
             }
